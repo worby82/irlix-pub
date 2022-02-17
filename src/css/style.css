@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 142px;
+  padding: 32px;
+  padding-bottom: 0;
+  background: #201F2E;
+  z-index: 1000;
+}
+header::after {
+  content: "";
+  top: 142px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  display: block;
+  height: 64px;
+  background: linear-gradient(180deg, #201F2E 0%, rgba(32, 31, 46, 0) 100%);
+}
+
+main {
+  min-height: 100%;
+  padding: 194px 32px 128px;
+  background: #201F2E;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0E0D13;
+  border-radius: 32px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 24px 32px;
+  z-index: 1000;
+}
+
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+
+time {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #C4C1CF;
+}
+
+.logo {
+  position: absolute;
+  top: -46px;
+  right: -8.63px;
+  top: -33px;
+  right: 0;
+  width: 145.63px;
+  height: 172.09px;
+  fill: #fff;
+}
+
+.tag {
+  display: flex;
+  overflow: auto;
+  list-style: none;
+  margin: auto -32px -20px;
+  padding: 0 32px;
+  scrollbar-width: none;
+  position: relative;
+  z-index: 1010;
+}
+.tag__item {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #C4C1CF;
+  padding: 8px 16px 9px;
+  border-radius: 32px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.tag__item_active {
+  border: 1px solid #C4C1CF;
+  color: #FFFFFF;
+}
+.tag__item:hover {
+  cursor: pointer;
+  border: 1px solid #C4C1CF;
+  transition: border-color 0.3s;
+}
+.tag::-webkit-scrollbar {
+  width: 0;
+  padding: 0;
+  height: 0;
+}
+
+.cocktail-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -14px -16px;
+  list-style: none;
+}
+
+.cocktail-card {
+  width: 100%;
+  min-width: 256px;
+  max-width: 384px;
+  border-radius: 32px;
+  overflow: hidden;
+  margin: 14px 16px;
+  height: 425px;
+}
+.cocktail-card__image-wrap {
+  display: flex;
+  justify-content: center;
+}
+.cocktail-card__image {
+  width: auto;
+  height: 100%;
+}
+.cocktail-card__inner {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  height: 100%;
+  margin-top: -425px;
+  flex-wrap: wrap;
+  z-index: 10;
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 48.96%, rgba(14, 13, 19, 0.9) 89.58%);
+}
+.cocktail-card__alkhogol-sticker {
+  width: 80px;
+  height: 80px;
+  background: #0E0D13;
+  border-radius: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #C4C1CF;
+  margin-top: -6px;
+  margin-left: -14px;
+  text-align: right;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cocktail-card__alkhogol-precent {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+.cocktail-card__name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+  margin-top: auto;
+}
+.cocktail-card__description {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #C4C1CF;
+}
+
+.btn {
+  display: block;
+}
+.btn_search {
+  background: #44414E;
+  border-radius: 32px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  color: #C4C1CF;
+  padding: 16px 24px;
+}
+
+@media screen and (min-width: 608px) {
+  .cocktail-list {
+    justify-content: start;
+  }
+
+  .cocktail-card {
+    width: calc(50% - 32px);
+  }
+}
+@media screen and (min-width: 898px) {
+  .cocktail-card {
+    width: calc(33.3333333333% - 32px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cocktail-card {
+    width: calc(25% - 32px);
+    max-width: 336px;
+  }
+}

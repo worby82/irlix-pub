@@ -165,4 +165,4 @@ exports.cleanCss = cleanCss;
 exports.svgCompile = svgCompile;
 exports.imageCompile = imageCompile;
 exports.watcher = watcher;
-exports.default = series(htmlCompile, scss, concatCss, cleanCss, svgCompile, imageCompile, watcher);
+exports.default = series(htmlCompile, ttfToWoff, fontsStyle, scss, concatCss, cleanCss, svgCompile, imageCompile, watcher);

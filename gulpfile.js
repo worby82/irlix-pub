@@ -7,6 +7,11 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const concat = require('gulp-concat');
 const clean = require('gulp-clean-css');
 
+function htmlCompile() {
+    return src('src/**/*.html')
+    .pipe(dest('app/'));
+}
+
 function ttfToWoff() {
 	// Ищем файлы шрифтов .ttf
 	return src('src/fonts/*.ttf')
@@ -79,11 +84,6 @@ function fontsStyle() {
 	function cb() { }
 }
 
-function htmlCompile() {
-    return src('src/**/*.html')
-    .pipe(dest('app/'));
-}
-
 function scss() {
     return src('src/scss/**/*.scss')
     .pipe(sass())
@@ -93,6 +93,7 @@ function scss() {
 function concatCss() {
     return src(['src/css/fonts.css','src/css/style.css','src/css/**/*.css'])
     .pipe(concat('style.css'))
+    .pipe(dest('app/css/'))
     .pipe(concat('style.min.css'))
     .pipe(dest('app/css/'));
 }
@@ -101,6 +102,11 @@ function cleanCss() {
     return src('app/css/style.min.css')
     .pipe(clean())
     .pipe(dest('app/css/'));
+}
+
+function jsCompile() {
+    return src(['src/js/**/*.js','src/js/**/*.json'])
+    .pipe(dest('app/js/'));
 }
 
 function svgCompile() {
@@ -153,16 +159,18 @@ function watcher() {
     watch('src/scss/**/*.scss', scss);
     watch('src/css/**/*.css', concatCss);
     watch('app/css/style.css', cleanCss);
-    watch('src/**/*.html', htmlCompile); 
+    watch('src/**/*.html', htmlCompile);
+    watch(['src/js/**/*.js','src/js/**/*.json'], jsCompile);
 }
 
+exports.htmlCompile = htmlCompile;
 exports.ttfToWoff = ttfToWoff;
 exports.fontsStyle = fontsStyle;
-exports.htmlCompile = htmlCompile;
 exports.scss = scss;
 exports.concatCss = concatCss;
 exports.cleanCss = cleanCss;
+exports.jsCompile = jsCompile;
 exports.svgCompile = svgCompile;
 exports.imageCompile = imageCompile;
 exports.watcher = watcher;
-exports.default = series(htmlCompile, ttfToWoff, fontsStyle, scss, concatCss, cleanCss, svgCompile, imageCompile, watcher);
+exports.default = series(htmlCompile, ttfToWoff, fontsStyle, scss, concatCss, cleanCss, jsCompile, svgCompile, imageCompile, watcher);

@@ -1,7 +1,7 @@
 
 let data;
 var request = new XMLHttpRequest();
-request.open('GET', '/app/js/cocktail.json');
+request.open('GET', '../js/cocktail.json');
 request.onloadend = function() {
     data = JSON.parse(request.responseText);
 }
@@ -41,7 +41,7 @@ function search() {
         };
     };
     if (cocktailCount == 0) {
-        cocktailCard = makeCocktailCard('Пусто', 'Попробуйте изменить запрос', 'Ничего не найдено', '/app/images/no-result.webp', '/app/images/no-result.jpg', '#')
+        cocktailCard = makeCocktailCard('Пусто', 'Попробуйте изменить запрос', 'Ничего не найдено', '../images/no-result.webp', '../images/no-result.jpg', '#')
         cocktailList.append(cocktailCard);
     };
     document.querySelector('.main>.container').append(cocktailList);

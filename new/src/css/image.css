@@ -1,0 +1,14 @@
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.image > img {
+  min-width: 320px;
+  min-height: 421px;
+}
+.image--detail > img {
+  min-width: 384px;
+  min-height: 352px;
+}

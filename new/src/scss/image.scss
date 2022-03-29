@@ -1,0 +1,16 @@
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    &>img {
+        min-width: 320px;
+        min-height: 421px;
+    }
+    &--detail {
+        &>img {
+            min-width: 384px;
+            min-height: 352px;
+        }
+    }
+}

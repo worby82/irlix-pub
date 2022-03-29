@@ -1,0 +1,44 @@
+.text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    // line-height: 21px;
+    line-height: normal;
+    text-align: justify;
+    color: #C4C1CF;
+    &--exclusion {
+        display: flex;
+        width: 100%;
+        &::after {
+            content: '';
+            order: 2;
+            margin: 0 5px;
+            width: 100%;
+            border-bottom: 2px dotted #C4C1CF;
+            height: 14px;
+        }
+    }
+    &__exclusion-item {
+        white-space: nowrap;
+        font-size: 18px;
+        // line-height: 21px;
+        line-height: normal;
+        &:first-child {
+            order: 1;
+        }
+        &:last-child {
+            order: 3;
+        }
+    }
+    &--no-result {
+        font-weight: normal;
+        font-size: 24px;
+        // line-height: 28px;
+        line-height: normal;
+        text-align: center;
+        letter-spacing: 0.07em;
+        color: #FFFFFF;
+        margin-top: 16px;
+    }
+}

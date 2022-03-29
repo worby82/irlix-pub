@@ -1,0 +1,15 @@
+.main {
+    min-height: 100%;
+    // padding: 194px 32px 128px;
+    background: #201F2E;
+    &--detail {
+        margin-top: 352px;
+        padding: 32px;
+        @media screen and (min-width: 768px) {
+            margin-top: 704px;
+        }
+        @media screen and (min-width: 1152px) {
+            margin-top: 1056px;
+        }
+    }
+}
